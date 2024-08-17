@@ -86,6 +86,26 @@ body{
   flex-wrap: nowrap;
   
 }
+
+.review-container{
+  margin:90px auto;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  flex-wrap: nowrap;
+  
+}
+
+.search-result-container{
+  margin:90px auto;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  flex-wrap: nowrap;
+}
+
 .main-heading{
   margin-top: 50px;
   margin-bottom: 40px;
@@ -107,6 +127,7 @@ body{
   height: 50px;
   width: 100px;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .review{
