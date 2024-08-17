@@ -10,7 +10,7 @@ Key Features:
 2. Book Discovery: Users can explore a vast collection of books through search and sorting options.
 3. Review Management: Users can edit their existing book reviews to maintain accuracy.
 
-![Screenshot of my project](public/images/screenshot1.png)
-![Screenshot of my project](public/images/screenshot2.png)
-![Screenshot of my project](public/images/screenshot3.png)
-![Screenshot of my project](public/images/screenshot4.png)
+![Screenshot of my project](public/images/Screenshot1.png)
+![Screenshot of my project](public/images/Screenshot2.png)
+![Screenshot of my project](public/images/Screenshot3.png)
+![Screenshot of my project](public/images/Screenshot4.png)
