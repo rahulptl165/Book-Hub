@@ -1,0 +1,18 @@
+<%- include('header.ejs') %>
+
+    <div class="container">
+      <div class="BookTitle box">
+
+        
+        <img src="https://covers.openlibrary.org/b/isbn/<%=book.isbn%>-M.jpg" height="195px" width="155px">
+        <a href="BookNotes"><h1><%= book.title %></h1></a>
+        <p>Date Of Added : <%= book.reviewdate %></p>
+        <p class="rateing">Rating : <%= book.rating %></p>
+        <button type="submit" class="btn-view"><a href="/viewReview/<%=book.id%>">View Review</a></button>
+       </div> 
+    </div>
+
+<!-- footer of website -->
+<div class="footer-new">
+    <footer>&copy;All rights reserved.</footer>
+  </div>

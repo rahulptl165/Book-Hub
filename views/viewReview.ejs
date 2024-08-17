@@ -1,0 +1,89 @@
+<%- include('header.ejs') %>
+
+    <div class="container">
+        <h2><%=book.title%></h2>
+        <p class="review" id="title<%= book.id %>">
+            <%= book.review %> 
+        </p>
+
+        <form action="/edit" method="post" id="edit-form">
+            <input type="hidden" name="bookid" value="<%=book.id%>"/>
+            <textarea id="input<%= book.id %>" type="text" name="updatedReview" autocomplete="off"
+            autofocus="true" hidden="true" class="review editingReview"><%= book.review %></textarea>
+            <button id="done<%= book.id %>" class="edit btn" type="submit" hidden>Save</button>
+        </form>
+
+        <button id="edit<%= book.id %>" class="edit btn" onclick="handler('<%= book.id%>')">Edit</button>
+
+    </div>
+
+
+</div>
+<!-- footer of website -->
+<div class="footer-new">
+  <footer>&copy;All rights reserved.</footer>
+</div>
+
+<script>
+
+//     const paragraph = document.getElementById("edit");
+   
+//    document.querySelector("div > input").addEventListener("click", ()=>{
+//    if( paragraph.contentEditable === "true"){
+//     paragraph.contentEditable="false";
+//     document.querySelector("div > p").style.removeProperty("border");
+//     document.querySelector("div > input").setAttribute("value", "Edit");} 
+//     else{
+//     paragraph.contentEditable = "true";
+//     document.querySelector("div > p").style.border = "1px solid black";   
+//     document.querySelector("div > input").setAttribute("value", "Save");
+//     }
+//    });
+
+// function handler(id) {
+//       document.getElementById("title" + id).setAttribute("hidden", true)
+//       document.getElementById("edit" + id).setAttribute("hidden", true)
+//       document.getElementById("done" + id).removeAttribute("hidden")
+//       document.getElementById("input" + id).removeAttribute("hidden")
+//       document.getElementById("edit-form").classList.add("container")
+
+//       document.getElementById("input" + id).style.display="block";
+//       document.getElementById("input" + id).style.overflow="hidden";
+//       document.getElementById("input" + id).style.resize="none";
+
+//       document.getElementById("input" + id).addEventListener('DOMContentLoaded', autoResize);
+
+//       function autoResize(){
+//         this.style.height='auto';
+//         this.style.height = this.scrollHeight + 'px';
+//       }
+//     }
+   
+function handler(id) {
+    document.getElementById("title" + id).setAttribute("hidden", true);
+    document.getElementById("edit" + id).setAttribute("hidden", true);
+    document.getElementById("done" + id).removeAttribute("hidden");
+    const textarea = document.getElementById("input" + id);
+    textarea.removeAttribute("hidden");
+    textarea.style.display = "block";
+    textarea.style.overflow = "hidden";
+    textarea.style.width = "800px";
+    textarea.style.resize = "none";
+
+    // Auto resize the textarea based on its content
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
+
+    // Listen for input events to resize as the user types
+    textarea.addEventListener('input', function () {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+    });
+}
+
+    
+
+</script>
+
+</body>
+</html>

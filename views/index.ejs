@@ -1,0 +1,44 @@
+<%- include('header.ejs') %>
+
+<section>
+   
+    <!-- main section of website -->
+    <div class="container" id="heading">
+
+  <!-- heading: Rahul Patel Books I've Read -->
+     <div class="main-heading box">
+        <h1 id="mainTitle"> Books Hub: A Community for Book Lovers</h1>
+        <form class="sort" action="/sort-criteria" method="post">
+          <select id="sortCriteria" name="criteria">
+            <option value="reviewDate">Date added</option>
+            <option value="title">Sort by Title</option>
+            <option value="rating">Sort by Rating</option>
+          </select>
+          <button type="submit" id="sortButton" class="btn">Sort</button> 
+        </form> 
+        <hr/>
+      </div>
+
+     <!-- Book image and title -->
+        <% for(let item of listItems ){ %>
+        <div class="BookTitle box">
+
+            
+            <img src="https://covers.openlibrary.org/b/isbn/<%=item.isbn%>-M.jpg" height="165px" width="125px">
+            <a href="BookNotes"><h1><%= item.title %></h1></a>
+            <p>Date Of Added : <%= item.reviewdate.toISOString().slice(0, 10) %></p>
+            <p class="rateing">Rating : <%= item.rating %></p>
+            <button type="submit" class="btn-view"><a href="/viewReview/<%=item.id%>">View Review</a></button>
+        </div> 
+
+        <% } %>
+
+     
+    </div>
+
+   
+</section>
+
+
+<%- include('footer.ejs') %>
+  
